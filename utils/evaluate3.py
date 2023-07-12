@@ -20,9 +20,6 @@ Ks = eval(args.Ks)
 device = torch.device("cuda:" + str(args.gpu_id)) if args.cuda else torch.device("cpu")
 BATCH_SIZE = args.test_batch_size
 batch_test_flag = args.batch_test_flag
-ff=open("r.txt","w",encoding='utf-8')
-
-
 def ranklist_by_heapq(user_pos_test, test_items, rating, Ks,u):
     item_score = {}
     u=u%BATCH_SIZE
@@ -43,10 +40,6 @@ def ranklist_by_heapq(user_pos_test, test_items, rating, Ks,u):
             r.append(1)
         else:
             r.append(0)
-    # print(r)
-  
-    ff.write(str(r)+'\n')
-
     auc = 0.
     return r, auc
 
