@@ -137,8 +137,6 @@ def build_sparse_relational_graph(relation_dict):
     # interaction: user->item, [n_users, n_entities]
     norm_mat_list[0] = norm_mat_list[0].tocsr()[:n_users, n_users:].tocoo()
     mean_mat_list[0] = mean_mat_list[0].tocsr()[:n_users, n_users:].tocoo()
-    print(mean_mat_list[0])
-    print(mean_mat_list[0].shape)
 
     return adj_mat_list, norm_mat_list, mean_mat_list
 
